@@ -1,0 +1,47 @@
+.bs-section-header {
+	@import "utils";
+	@include flex(space-between, center);
+	background-color: #002c48;
+	.bs-logo {
+		max-width: clamp(200px, 100%, 300px);
+		@include flex-center;
+		img {
+			max-width: 100%;
+			@include view($_mobile_view) {
+				max-width: 200px;
+			}
+		}
+	}
+	.bs-nav-items {
+		width: auto;
+		@include flex-center;
+		@include rwd {
+			display: none;
+		}
+		.bs-item {
+			font-weight: 600;
+			@include flex(center, center, column);
+		}
+		.bs-text {
+			color: #FFF;
+			text-align: center;
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 0%;
+				height: 2px;
+				background-color: #FFF;
+				transition: .3s all;
+			}
+			&:hover {
+				cursor: pointer;
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

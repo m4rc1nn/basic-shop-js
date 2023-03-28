@@ -1,0 +1,229 @@
+$_mobile_view: 900;
+$_mobile_view_2: 700;
+
+$spacings: ("xs", 0.75, 0.5, 0.5), ("s", 1, 0.875, 0.875), ("m", 1.25, 1.125, 1.125), ("l", 1.5, 1.25, 1.25), ("xl", 2, 1.5, 1.25), ("xxl", 3, 2.5, 2);
+$font_size: ("xs", 0.875, 1), ("s", 1, 1), ("m", 1.25, 1.25), ("l", 1.5, 1.25), ("xl", 2, 1.75), ("xxl", 3, 2.5), ("xxxl", 4.5, 3.5); 
+
+@mixin view($value) {
+  @media (max-width: #{$value}px) { @content; }
+}
+
+@mixin rwd {
+  @media (max-width: #{$_mobile_view}px) { @content; }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($value_1, $value_2, $value_3: row) {
+  display: flex;
+  justify-content: $value_1;
+  align-items: $value_2;
+  flex-direction: $value_3;
+}
+
+@each $s in $spacings {
+  //MARGINS
+  .bs-mt-#{nth($s, 1)} {
+      margin-top: #{nth($s, 2)}rem;
+  }
+
+  .bs-mb-#{nth($s, 1)} {
+      margin-bottom: #{nth($s, 2)}rem;
+  }
+
+  .bs-mr-#{nth($s, 1)} {
+      margin-right: #{nth($s, 2)}rem;
+  }
+
+  .bs-ml-#{nth($s, 1)} {
+      margin-left: #{nth($s, 2)}rem;
+  }
+
+  .bs-mv-#{nth($s, 1)} {
+      margin-left: #{nth($s, 2)}rem;
+      margin-right: #{nth($s, 2)}rem;
+  }
+
+  .bs-mh-#{nth($s, 1)} {
+      margin-top: #{nth($s, 2)}rem;
+      margin-bottom: #{nth($s, 2)}rem;
+  }
+
+  .bs-mg-#{nth($s, 1)} {
+      margin: #{nth($s, 2)}rem;
+  }
+
+  @include rwd {
+      .bs-mt-#{nth($s, 1)} {
+          margin-top: #{nth($s, 3)}rem;
+      }
+  
+      .bs-mb-#{nth($s, 1)} {
+          margin-bottom: #{nth($s, 3)}rem;
+      }
+  
+      .bs-mr-#{nth($s, 1)} {
+          margin-right: #{nth($s, 3)}rem;
+      }
+  
+      .bs-ml-#{nth($s, 1)} {
+          margin-left: #{nth($s, 3)}rem;
+      }
+
+      .bs-mv-#{nth($s, 1)} {
+          margin-left: #{nth($s, 3)}rem;
+          margin-right: #{nth($s, 3)}rem;
+      }
+  
+      .bs-mh-#{nth($s, 1)} {
+          margin-top: #{nth($s, 3)}rem;
+          margin-bottom: #{nth($s, 3)}rem;
+      }
+
+      .bs-mg-#{nth($s, 1)} {
+          margin: #{nth($s, 3)}rem;
+      }
+  }
+
+  @include view($_mobile_view_2) {
+      .bs-mt-#{nth($s, 1)} {
+          margin-top: #{nth($s, 4)}rem;
+      }
+  
+      .bs-mb-#{nth($s, 1)} {
+          margin-bottom: #{nth($s, 4)}rem;
+      }
+  
+      .bs-mr-#{nth($s, 1)} {
+          margin-right: #{nth($s, 4)}rem;
+      }
+  
+      .bs-ml-#{nth($s, 1)} {
+          margin-left: #{nth($s, 4)}rem;
+      }
+
+      .bs-mv-#{nth($s, 1)} {
+          margin-left: #{nth($s, 4)}rem;
+          margin-right: #{nth($s, 4)}rem;
+      }
+  
+      .bs-mh-#{nth($s, 1)} {
+          margin-top: #{nth($s, 4)}rem;
+          margin-bottom: #{nth($s, 4)}rem;
+      }
+
+      .bs-mg-#{nth($s, 1)} {
+          margin: #{nth($s, 4)}rem;
+      }
+  }
+
+  //PADDINGS
+  .bs-pt-#{nth($s, 1)} {
+      padding-top: #{nth($s, 2)}rem;
+  }
+
+  .bs-pb-#{nth($s, 1)} {
+      padding-bottom: #{nth($s, 2)}rem;
+  }
+
+  .bs-pr-#{nth($s, 1)} {
+      padding-right: #{nth($s, 2)}rem;
+  }
+
+  .bs-pl-#{nth($s, 1)} {
+      padding-left: #{nth($s, 2)}rem;
+  }
+
+  .bs-pv-#{nth($s, 1)} {
+      padding-left: #{nth($s, 2)}rem;
+      padding-right: #{nth($s, 2)}rem;
+  }
+
+  .bs-ph-#{nth($s, 1)} {
+      padding-top: #{nth($s, 2)}rem;
+      padding-bottom: #{nth($s, 2)}rem;
+  }
+
+  .bs-pd-#{nth($s, 1)} {
+      padding: #{nth($s, 2)}rem;
+  }
+  
+  @include rwd {
+      .bs-pt-#{nth($s, 1)} {
+          padding-top: #{nth($s, 3)}rem;
+      }
+  
+      .bs-pb-#{nth($s, 1)} {
+          padding-bottom: #{nth($s, 3)}rem;
+      }
+  
+      .bs-pr-#{nth($s, 1)} {
+          padding-right: #{nth($s, 3)}rem;
+      }
+  
+      .bs-pl-#{nth($s, 1)} {
+          padding-left: #{nth($s, 3)}rem;
+      }
+
+      .bs-pv-#{nth($s, 1)} {
+          padding-left: #{nth($s, 3)}rem;
+          padding-right: #{nth($s, 3)}rem;
+      }
+  
+      .bs-ph-#{nth($s, 1)} {
+          padding-top: #{nth($s, 3)}rem;
+          padding-bottom: #{nth($s, 3)}rem;
+      }
+
+      .bs-pd-#{nth($s, 1)} {
+          padding: #{nth($s, 3)}rem;
+      }
+  }
+
+  @include view($_mobile_view_2) {
+      .bs-pt-#{nth($s, 1)} {
+          padding-top: #{nth($s, 4)}rem;
+      }
+  
+      .bs-pb-#{nth($s, 1)} {
+          padding-bottom: #{nth($s, 4)}rem;
+      }
+  
+      .bs-pr-#{nth($s, 1)} {
+          padding-right: #{nth($s, 4)}rem;
+      }
+  
+      .bs-pl-#{nth($s, 1)} {
+          padding-left: #{nth($s, 4)}rem;
+      }
+
+      .bs-pv-#{nth($s, 1)} {
+          padding-left: #{nth($s, 4)}rem;
+          padding-right: #{nth($s, 4)}rem;
+      }
+  
+      .bs-ph-#{nth($s, 1)} {
+          padding-top: #{nth($s, 4)}rem;
+          padding-bottom: #{nth($s, 4)}rem;
+      }
+
+      .bs-pd-#{nth($s, 1)} {
+          padding: #{nth($s, 4)}rem;
+      }
+  }
+}
+
+@each $fs in $font_size {
+  .bs-fs-#{nth($fs, 1)} {
+      font-size: #{nth($fs, 2)}rem;
+  }
+  @include rwd {
+      .bs-fs-#{nth($fs, 1)} {
+          font-size: #{nth($fs, 3)}rem;
+      }
+  }
+}

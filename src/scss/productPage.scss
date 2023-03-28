@@ -1,0 +1,25 @@
+.bs-content {
+  @import "utils";
+  @include flex(center, center, column);
+  margin: 0 auto;
+  width: clamp(300px, 100%, 1200px);
+  box-sizing: border-box;
+  //background-color: red;
+  .bs-row {
+    width: 100%;
+    @include flex(center, center, row);
+    @include rwd {
+      @include flex(center, center, column);
+    }
+    .bs-col {
+      width: 50%;
+      aspect-ratio: 1/1;
+      box-sizing: border-box;
+      @include flex(center, center, column);
+      @include rwd {
+        width: 100%;
+      }
+
+    }
+  }
+}
